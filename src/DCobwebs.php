@@ -250,7 +250,7 @@ class Dcobwebs
     $table = glob(__DIR__ . "/database/*.json");
     $tables = array();
     foreach ($table as $t) {
-      $tables[] = explode(".", explode("/", $t)[1])[0];
+      $tables[] = explode("database/", explode(".", $t)[0])[1];
     }
 
     return $tables;
