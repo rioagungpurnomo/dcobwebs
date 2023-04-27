@@ -1,6 +1,6 @@
 # DCobwebs
 
-DCobwebs (Database Cobwebs) PHP framework to make it easier to process data.
+DCobwebs (Database Cobwebs) PHP framework to make it easier to process data and very simple noSQL.
 
 ### Installation
 
