@@ -2,6 +2,22 @@
 
 DCobwebs (Database Cobwebs) PHP framework to make it easier to process data.
 
+### Installation
+
+```bash
+composer require rioagungpurnomo/dcobwebs
+```
+
+### Get started
+
+```php
+require 'vendor/autoload.php';
+
+use Rioagungpurnomo\Dcobwebs\Dcobwebs;
+
+Dcobwebs::create_table('users', ['name', 'bio']);
+```
+
 ### Create Data
 
 ```php
