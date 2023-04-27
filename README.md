@@ -1,6 +1,10 @@
+<p align="center"><img src="https://user-images.githubusercontent.com/91432414/234926130-fe9db818-1ed8-493c-814b-4bd937778992.png" width="400" alt="DCobwebs Logo"></p>
+
+<p align="center">
 <a href="https://packagist.org/packages/rioagungpurnomo/dcobwebs"><img src="https://img.shields.io/packagist/dt/rioagungpurnomo/dcobwebs" alt="Total Downloads"></a>
 <a href="https://packagist.org/packages/rioagungpurnomo/dcobwebs"><img src="https://img.shields.io/packagist/v/rioagungpurnomo/dcobwebs" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/rioagungpurnomo/dcobwebs"><img src="https://img.shields.io/packagist/l/rioagungpurnomo/dcobwebs" alt="License"></a>
+</p>
 
 # DCobwebs
 DCobwebs (Database Cobwebs) PHP framework to make it easier to process data and very simple noSQL.
