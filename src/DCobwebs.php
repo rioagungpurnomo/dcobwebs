@@ -215,9 +215,9 @@ class DCobwebs
       die;
     } else {
       if (preg_match('/^[a-zA-Z0-9_-]+$/', $name)) {
-        touch("database/$name.json");
-        touch("database/field/$name.json");
-        touch("database/id/$name.json");
+        touch(__DIR__ . "/database/$name.json");
+        touch(__DIR__ . "/database/field/$name.json");
+        touch(__DIR__ . "/database/id/$name.json");
 
         $data = json_encode($array);
         file_put_contents(__DIR__ . "/database/field/$name.json", $data);
