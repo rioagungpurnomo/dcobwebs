@@ -6,8 +6,8 @@ class DCobwebs
 {
   public static function create_data($array, $table)
   {
-    if (file_exists("database/$table.json")) {
-      $fields = file_get_contents('database/field/' . $table . '.json');
+    if (file_exists(__DIR__ . "/database/$table.json")) {
+      $fields = file_get_contents(__DIR__ . "/database/field/$table.json");
       $data_fields = json_decode($fields, true);
       $keys = array_keys($array);
 
@@ -18,10 +18,10 @@ class DCobwebs
         }
       }
 
-      $data = file_get_contents("database/$table.json");
+      $data = file_get_contents(__DIR__ . "/database/$table.json");
       $data_array = json_decode($data, true);
 
-      $data_id = file_get_contents('database/id/' . $table . '.json');
+      $data_id = file_get_contents(__DIR__ . "/database/id/$table.json");
       $id_count = json_decode($data_id, true);
 
       if ($id_count == null) {
@@ -36,8 +36,8 @@ class DCobwebs
       $data_array[] = $array;
 
       $data = json_encode($data_array);
-      file_put_contents("database/$table.json", $data);
-      file_put_contents('database/id/' . $table . '.json', json_encode([$id]));
+      file_put_contents(__DIR__ . "/database/$table.json", $data);
+      file_put_contents(__DIR__ . "/database/id/$table.json", json_encode([$id]));
     } else {
       echo "The table $table does not exist.";
       die;
@@ -46,8 +46,8 @@ class DCobwebs
 
   public static function update_data($id, $array, $table)
   {
-    if (file_exists("database/$table.json")) {
-      $fields = file_get_contents('database/field/' . $table . '.json');
+    if (file_exists(__DIR__ . "/database/$table.json")) {
+      $fields = file_get_contents(__DIR__ . "/database/field/$table.json");
       $data_fields = json_decode($fields, true);
       $keys = array_keys($array);
 
@@ -58,7 +58,7 @@ class DCobwebs
         }
       }
 
-      $data = file_get_contents("database/$table.json");
+      $data = file_get_contents(__DIR__ . "/database/$table.json");
       $data_array = json_decode($data, true);
 
       $index = 0;
@@ -74,7 +74,7 @@ class DCobwebs
       }
 
       $data = json_encode($data_array);
-      file_put_contents("database/$table.json", $data);
+      file_put_contents(__DIR__ . "/database/$table.json", $data);
     } else {
       echo "The table $table does not exist.";
       die;
@@ -83,8 +83,8 @@ class DCobwebs
 
   public static function delete_data($id, $table)
   {
-    if (file_exists("database/$table.json")) {
-      $data = file_get_contents("database/$table.json");
+    if (file_exists(__DIR__ . "/database/$table.json")) {
+      $data = file_get_contents(__DIR__ . "/database/$table.json");
       $data_array = json_decode($data, true);
 
       $index = null;
@@ -99,7 +99,7 @@ class DCobwebs
         unset($data_array[$index]);
         $data_array = array_values($data_array);
         $data = json_encode($data_array);
-        file_put_contents("database/$table.json", $data);
+        file_put_contents(__DIR__ . "/database/$table.json", $data);
       }
     } else {
       echo "The table $table does not exist.";
@@ -109,8 +109,8 @@ class DCobwebs
 
   public static function count_data($table)
   {
-    if (file_exists("database/$table.json")) {
-      $data = file_get_contents("database/$table.json");
+    if (file_exists(__DIR__ . "/database/$table.json")) {
+      $data = file_get_contents(__DIR__ . "/database/$table.json");
       $data_array = json_decode($data, true);
 
       if ($data_array == null) {
@@ -128,8 +128,8 @@ class DCobwebs
 
   public static function single_data($id, $table)
   {
-    if (file_exists("database/$table.json")) {
-      $data = file_get_contents("database/$table.json");
+    if (file_exists(__DIR__ . "/database/$table.json")) {
+      $data = file_get_contents(__DIR__ . "/database/$table.json");
       $data_array = json_decode($data, true);
 
       $result = null;
@@ -154,8 +154,8 @@ class DCobwebs
 
   public static function all_data($table)
   {
-    if (file_exists("database/$table.json")) {
-      $data = file_get_contents("database/$table.json");
+    if (file_exists(__DIR__ . "/database/$table.json")) {
+      $data = file_get_contents(__DIR__ . "/database/$table.json");
       $data_array = json_decode($data, true);
       return $data_array;
     } else {
@@ -166,8 +166,8 @@ class DCobwebs
 
   public static function asc_data($field, $table)
   {
-    if (file_exists("database/$table.json")) {
-      $json = file_get_contents("database/$table.json");
+    if (file_exists(__DIR__ . "/database/$table.json")) {
+      $json = file_get_contents(__DIR__ . "/database/$table.json");
       $data = json_decode($json, true);
 
       if (isset($data[0][$field])) {
@@ -189,8 +189,8 @@ class DCobwebs
 
   public static function desc_data($field, $table)
   {
-    if (file_exists("database/$table.json")) {
-      $json = file_get_contents("database/$table.json");
+    if (file_exists(__DIR__ . "/database/$table.json")) {
+      $json = file_get_contents(__DIR__ . "/database/$table.json");
       $data = json_decode($json, true);
       if (isset($data[0][$field])) {
         usort($data, function ($a, $b) use ($field) {
@@ -210,7 +210,7 @@ class DCobwebs
 
   public static function create_table($name, $array)
   {
-    if (file_exists("database/$name.json")) {
+    if (file_exists(__DIR__ . "/database/$name.json")) {
       echo "The name of the $name table already exists.";
       die;
     } else {
@@ -220,7 +220,7 @@ class DCobwebs
         touch("database/id/$name.json");
 
         $data = json_encode($array);
-        file_put_contents("database/field/$name.json", $data);
+        file_put_contents(__DIR__ . "/database/field/$name.json", $data);
       } else {
         echo "Allows only letters, numbers, dashes, and underscores.";
         die;
@@ -230,7 +230,7 @@ class DCobwebs
 
   public static function list_table()
   {
-    $table = glob("database/*.json");
+    $table = glob(__DIR__ . "/database/*.json");
     $tables = array();
     foreach ($table as $t) {
       $tables[] = explode(".", explode("/", $t)[1])[0];
@@ -241,10 +241,10 @@ class DCobwebs
 
   public static function delete_table($table)
   {
-    if (file_exists("database/$table.json")) {
-      unlink("database/$table.json");
-      unlink("database/field/$table.json");
-      unlink("database/id/$table.json");
+    if (file_exists(__DIR__ . "/database/$table.json")) {
+      unlink(__DIR__ . "/database/$table.json");
+      unlink(__DIR__ . "/database/field/$table.json");
+      unlink(__DIR__ . "/database/id/$table.json");
     } else {
       echo "The table $table does not exist.";
       die;
@@ -253,14 +253,14 @@ class DCobwebs
 
   public static function rename_table($old_name, $new_name)
   {
-    if (file_exists("database/$new_name.json")) {
+    if (file_exists(__DIR__ . "/database/$new_name.json")) {
       echo "The name of the $new_name table already exists.";
       die;
     } else {
       if (preg_match('/^[a-zA-Z0-9_-]+$/', $new_name)) {
-        rename("database/$old_name.json", "database/$new_name.json");
-        rename("database/field/$old_name.json", "database/field/$new_name.json");
-        rename("database/id/$old_name.json", "database/id/$new_name.json");
+        rename(__DIR__ . "/database/$old_name.json", "database/$new_name.json");
+        rename(__DIR__ . "/database/field/$old_name.json", "database/field/$new_name.json");
+        rename(__DIR__ . "/database/id/$old_name.json", "database/id/$new_name.json");
       } else {
         echo "Allows only letters, numbers, dashes, and underscores.";
         die;
@@ -270,8 +270,8 @@ class DCobwebs
 
   public static function create_field_table($array, $table)
   {
-    if (file_exists("database/field/$table.json")) {
-      $data = file_get_contents("database/field/$table.json");
+    if (file_exists(__DIR__ . "/database/field/$table.json")) {
+      $data = file_get_contents(__DIR__ . "/database/field/$table.json");
       $data_array = json_decode($data, true);
 
       foreach ($array as $f) {
@@ -286,7 +286,7 @@ class DCobwebs
       }
 
       $data = json_encode($data_array);
-      file_put_contents("database/field/$table.json", $data);
+      file_put_contents(__DIR__ . "/database/field/$table.json", $data);
     } else {
       echo "The table $table does not exist.";
       die;
@@ -295,15 +295,15 @@ class DCobwebs
 
   public static function delete_field_table($field, $table)
   {
-    if (file_exists("database/$table.json")) {
-      $data = file_get_contents("database/field/$table.json");
+    if (file_exists(__DIR__ . "/database/$table.json")) {
+      $data = file_get_contents(__DIR__ . "/database/field/$table.json");
       $data_array = json_decode($data, true);
       $key = array_search($field, $data_array);
       if ($key !== false) {
         unset($data_array[$key]);
       }
 
-      $dataa = file_get_contents("database/$table.json");
+      $dataa = file_get_contents(__DIR__ . "/database/$table.json");
       $database = json_decode($dataa, true);
       foreach ($database as $keyy => $valuee) {
         unset($database[$keyy][$field]);
@@ -311,8 +311,8 @@ class DCobwebs
 
       $data = json_encode($data_array);
       $dataa = json_encode($database);
-      file_put_contents("database/field/$table.json", $data);
-      file_put_contents("database/$table.json", $dataa);
+      file_put_contents(__DIR__ . "/database/field/$table.json", $data);
+      file_put_contents(__DIR__ . "/database/$table.json", $dataa);
     } else {
       echo "The table $table does not exist.";
       die;
@@ -321,8 +321,8 @@ class DCobwebs
 
   public static function list_field_table($table)
   {
-    if (file_exists("database/$table.json")) {
-      $data = file_get_contents("database/field/$table.json");
+    if (file_exists(__DIR__ . "/database/$table.json")) {
+      $data = file_get_contents(__DIR__ . "/database/field/$table.json");
       $data_array = json_decode($data, true);
       return $data_array;
     } else {
