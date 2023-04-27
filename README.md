@@ -18,7 +18,7 @@ composer require rioagungpurnomo/dcobwebs
 ```
 
 ### Example
-A simple example of using DCobwebs and creating a **users** table containing **name** and *bio** fields.
+A simple example of using DCobwebs and creating a **users** table containing **name** and **bio** fields.
 ```php
 require 'vendor/autoload.php';
 
