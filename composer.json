@@ -1,0 +1,19 @@
+{
+    "name": "rioagungpurnomo/dcobwebs",
+    "description": "DCobwebs (Database Cobwebs) PHP framework to make it easier to process data.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Rioagungpurnomo\\Dcobwebs\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Rio Agung Purnomo",
+            "email": "rioagungpurnomo.ak@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
