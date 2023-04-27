@@ -267,6 +267,14 @@ class DCobwebs
       }
     }
   }
+  
+  public static function count_table(){
+    $folder = __DIR__ . '/database/';
+    $pattern = $folder . '*.json';
+    $files = glob($pattern);
+    $count = count($files);
+    return $count;
+  }
 
   public static function create_field_table($array, $table)
   {
