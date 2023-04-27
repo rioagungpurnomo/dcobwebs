@@ -2,7 +2,7 @@
 
 namespace Rioagungpurnomo\Dcobwebs;
 
-class DCobwebs
+class Dcobwebs
 {
   public static function create_data($array, $table)
   {
