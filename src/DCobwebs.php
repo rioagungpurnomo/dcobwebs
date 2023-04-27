@@ -107,7 +107,6 @@ class DCobwebs
     }
   }
 
-
   public static function count_data($table)
   {
     if (file_exists("database/$table.json")) {
@@ -332,14 +331,14 @@ class DCobwebs
     }
   }
 
-  public function encrypt($plaintext, $key, $iv)
+  public static function encrypt($plaintext, $key, $iv)
   {
     $cipher = "aes-256-cbc";
     $ciphertext = openssl_encrypt($plaintext, $cipher, $key, OPENSSL_RAW_DATA, $iv);
     return base64_encode($ciphertext);
   }
 
-  public function decrypt($ciphertext, $key, $iv)
+  public static function decrypt($ciphertext, $key, $iv)
   {
     $cipher = "aes-256-cbc";
     $ciphertext = base64_decode($ciphertext);
