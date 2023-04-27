@@ -131,7 +131,10 @@ class DCobwebs
     if (file_exists(__DIR__ . "/database/$table.json")) {
       $data = file_get_contents(__DIR__ . "/database/$table.json");
       $data_array = json_decode($data, true);
-
+      
+      if ($data_array == null) {
+        return [];
+      }else{
       $result = null;
       foreach ($data_array as $value) {
         if ($value['id'] == $id) {
@@ -146,6 +149,7 @@ class DCobwebs
         echo "Data with id $id was not found.";
         die;
       }
+     }
     } else {
       echo "The table $table does not exist.";
       die;
@@ -157,7 +161,11 @@ class DCobwebs
     if (file_exists(__DIR__ . "/database/$table.json")) {
       $data = file_get_contents(__DIR__ . "/database/$table.json");
       $data_array = json_decode($data, true);
+      if ($data_array == null) {
+        return [];
+      }else{
       return $data_array;
+      }
     } else {
       echo "The table $table does not exist.";
       die;
@@ -169,7 +177,10 @@ class DCobwebs
     if (file_exists(__DIR__ . "/database/$table.json")) {
       $json = file_get_contents(__DIR__ . "/database/$table.json");
       $data = json_decode($json, true);
-
+      
+      if ($data == null) {
+        return [];
+      }else{
       if (isset($data[0][$field])) {
         usort($data, function ($a, $b) use ($field) {
           return $a[$field] <=> $b[$field];
@@ -180,6 +191,7 @@ class DCobwebs
         echo "Field name $field is missing in table $table.";
         die;
       }
+     }
     } else {
       echo "The table $table does not exist.";
       die;
@@ -192,6 +204,10 @@ class DCobwebs
     if (file_exists(__DIR__ . "/database/$table.json")) {
       $json = file_get_contents(__DIR__ . "/database/$table.json");
       $data = json_decode($json, true);
+      
+      if ($data == null) {
+        return [];
+      }else{
       if (isset($data[0][$field])) {
         usort($data, function ($a, $b) use ($field) {
           return $a[$field] + $b[$field];
@@ -202,6 +218,7 @@ class DCobwebs
         echo "Field name $field is missing in table $table.";
         die;
       }
+     }
     } else {
       echo "The table $table does not exist.";
       die;
@@ -332,7 +349,11 @@ class DCobwebs
     if (file_exists(__DIR__ . "/database/$table.json")) {
       $data = file_get_contents(__DIR__ . "/database/field/$table.json");
       $data_array = json_decode($data, true);
+      if ($data_array == null) {
+        return [];
+      }else{
       return $data_array;
+      }
     } else {
       echo "The table $table does not exist.";
       die;
