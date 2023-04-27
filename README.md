@@ -1,6 +1,15 @@
+<p align="center">
+<a href="https://github.com/rioagungpurnomo/dcobwebs/actions"><img src="https://github.com/rioagungpurnomo/dcobwebs/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/rioagungpurnomo/dcobwebs"><img src="https://img.shields.io/packagist/dt/rioagungpurnomo/dcobwebs" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/rioagungpurnomo/dcobwebs"><img src="https://img.shields.io/packagist/v/rioagungpurnomo/dcobwebs" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/rioagungpurnomo/dcobwebs"><img src="https://img.shields.io/packagist/l/rioagungpurnomo/dcobwebs" alt="License"></a>
+</p>
+
 # DCobwebs
 
 DCobwebs (Database Cobwebs) PHP framework to make it easier to process data and very simple noSQL.
+
+Demo : **[view](http://dcobwebs.epizy.com)**
 
 ### Installation
 
@@ -8,7 +17,7 @@ DCobwebs (Database Cobwebs) PHP framework to make it easier to process data and 
 composer require rioagungpurnomo/dcobwebs
 ```
 
-### Get started
+### Example
 
 ```php
 require 'vendor/autoload.php';
