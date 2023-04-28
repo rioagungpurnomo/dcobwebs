@@ -51,7 +51,7 @@ Counts how much data is in a table.
 Dcobwebs::table(table)->count();
 ```
 
-### Single Data
+### Find Data
 Displays one data with a certain **id** in a table.
 ```php
 Dcobwebs::table(table)->find(id);
