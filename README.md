@@ -24,103 +24,109 @@ require 'vendor/autoload.php';
 
 use Rioagungpurnomo\Dcobwebs\Dcobwebs;
 
-Dcobwebs::create_table('users', ['name', 'bio']);
+Dcobwebs::add('users', ['name', 'bio']);
 ```
 
 ### Create Data
 Adding new data in a table.
 ```php
-Dcobwebs::create_data(array, table);
+Dcobwebs::table(table)->create(array);
 ```
 
 ### Update Data
 Updating data in a table.
 ```php
-Dcobwebs::update_data(id, array, table);
+Dcobwebs::table(table)->update(id, array);
 ```
 
 ### Delete Data
 Delete data in a table.
 ```php
-Dcobwebs::delete_data(id, array, table);
+Dcobwebs::table(table)->delete(id);
 ```
 
 ### Count Data
 Counts how much data is in a table.
 ```php
-Dcobwebs::count_data(table);
+Dcobwebs::table(table)->count();
 ```
 
 ### Single Data
 Displays one data with a certain **id** in a table.
 ```php
-Dcobwebs::single_data(id, table);
+Dcobwebs::table(table)->find(id);
+```
+
+### Where Data
+Retrieve only certain data in the table.
+```php
+Dcobwebs::table(table)->where(field, value);
 ```
 
 ### All Data
 Displays all data in a table.
 ```php
-Dcobwebs::all_data(table);
+Dcobwebs::table(table)->all();
 ```
 
 ### ASC Data
 Displays all data in a table by ASC (ASC).
 ```php
-Dcobwebs::asc_data(field, table);
+Dcobwebs::table(table)->asc(field);
 ```
 
 ### DESC Data
 Displays all data in a table by DESC (DESC).
 ```php
-Dcobwebs::desc_data(field, table);
+Dcobwebs::table(table)->desc(field);
 ```
 
 ### Create Table
 Adding a new table in the database.
 ```php
-Dcobwebs::create_table(name, array);
+Dcobwebs::add(name, array);
 ```
 
 ### List Table
 Displays all tables in the database.
 ```php
-Dcobwebs::list_table();
+Dcobwebs::list();
 ```
 
 ### Delete Table
 Delete tables in the database.
 ```php
-Dcobwebs::delete_table(table);
+Dcobwebs::remove(table);
 ```
 
 ### Rename Table
 Change the table name to the new table name in the database.
 ```php
-Dcobwebs::rename_table(old_name, new_name);
+Dcobwebs::rename(old_name, new_name);
 ```
 
 ### Count Table
 Count how many tables are in the database.
 ```php
-Dcobwebs::count_table();
+Dcobwebs::calculate();
 ```
 
 ### Create Field Table
 Adding existing fields to tables in the database.
 ```php
-Dcobwebs::create_field_table(array, table);
+Dcobwebs::table(table)->create_field(array);
 ```
 
 ### Delete Field Table
 Delete existing fields in the table in the database.
 ```php
-Dcobwebs::delete_field_table(field, table);
+Dcobwebs::table(table)->delete_field(field);
 ```
 
 ### List Field Table
 Displays the fields in the table in the database.
 ```php
-Dcobwebs::list_field_table(table);
+Dcobwebs::table(table)->list_field();
 ```
 
 ## Security

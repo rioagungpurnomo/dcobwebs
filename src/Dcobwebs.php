@@ -2,10 +2,19 @@
 
 namespace Rioagungpurnomo\Dcobwebs;
 
+
 class Dcobwebs
 {
-  public static function create_data($array, $table)
+private static $table;
+
+  public static function table($table){
+    self::$table = $table;
+    return new self();
+  }
+  
+  public static function create($array)
   {
+    $table = self::$table;
     if (file_exists(__DIR__ . "/database/$table.json")) {
       $fields = file_get_contents(__DIR__ . "/database/field/$table.json");
       $data_fields = json_decode($fields, true);
@@ -44,8 +53,9 @@ class Dcobwebs
     }
   }
 
-  public static function update_data($id, $array, $table)
+  public static function update($id, $array)
   {
+    $table = self::$table;
     if (file_exists(__DIR__ . "/database/$table.json")) {
       $fields = file_get_contents(__DIR__ . "/database/field/$table.json");
       $data_fields = json_decode($fields, true);
@@ -81,8 +91,9 @@ class Dcobwebs
     }
   }
 
-  public static function delete_data($id, $table)
+  public static function delete($id)
   {
+    $table = self::$table;
     if (file_exists(__DIR__ . "/database/$table.json")) {
       $data = file_get_contents(__DIR__ . "/database/$table.json");
       $data_array = json_decode($data, true);
@@ -107,8 +118,9 @@ class Dcobwebs
     }
   }
 
-  public static function count_data($table)
+  public static function count()
   {
+    $table = self::$table;
     if (file_exists(__DIR__ . "/database/$table.json")) {
       $data = file_get_contents(__DIR__ . "/database/$table.json");
       $data_array = json_decode($data, true);
@@ -126,8 +138,9 @@ class Dcobwebs
     }
   }
 
-  public static function single_data($id, $table)
+  public static function find($id)
   {
+    $table = self::$table;
     if (file_exists(__DIR__ . "/database/$table.json")) {
       $data = file_get_contents(__DIR__ . "/database/$table.json");
       $data_array = json_decode($data, true);
@@ -155,9 +168,26 @@ class Dcobwebs
       die;
     }
   }
+  
+  public static function where($field, $value){
+    $table = self::$table;
+if (file_exists(__DIR__ . "/database/$table.json")) {
+      $data = file_get_contents(__DIR__ . "/database/$table.json");
+      $data_array = json_decode($data, true);
+      
+      if ($data_array == null) {
+        return [];
+      }else{
+$results = array_filter($data_array, function($item) use ($value) {
+  return $item[$field] == $value;
+});
+}
+}
+  }
 
-  public static function all_data($table)
+  public static function all()
   {
+    $table = self::$table;
     if (file_exists(__DIR__ . "/database/$table.json")) {
       $data = file_get_contents(__DIR__ . "/database/$table.json");
       $data_array = json_decode($data, true);
@@ -172,8 +202,9 @@ class Dcobwebs
     }
   }
 
-  public static function asc_data($field, $table)
+  public static function asc($field)
   {
+    $table = self::$table;
     if (file_exists(__DIR__ . "/database/$table.json")) {
       $json = file_get_contents(__DIR__ . "/database/$table.json");
       $data = json_decode($json, true);
@@ -199,8 +230,9 @@ class Dcobwebs
   }
 
 
-  public static function desc_data($field, $table)
+  public static function desc($fiel)
   {
+    $table = self::$table;
     if (file_exists(__DIR__ . "/database/$table.json")) {
       $json = file_get_contents(__DIR__ . "/database/$table.json");
       $data = json_decode($json, true);
@@ -225,7 +257,7 @@ class Dcobwebs
     }
   }
 
-  public static function create_table($name, $array)
+  public static function add($name, $array)
   {
     if (file_exists(__DIR__ . "/database/$name.json")) {
       echo "The name of the $name table already exists.";
@@ -245,7 +277,7 @@ class Dcobwebs
     }
   }
 
-  public static function list_table()
+  public static function list()
   {
     $table = glob(__DIR__ . "/database/*.json");
     $tables = array();
@@ -256,7 +288,7 @@ class Dcobwebs
     return $tables;
   }
 
-  public static function delete_table($table)
+  public static function remove($table)
   {
     if (file_exists(__DIR__ . "/database/$table.json")) {
       unlink(__DIR__ . "/database/$table.json");
@@ -268,7 +300,7 @@ class Dcobwebs
     }
   }
 
-  public static function rename_table($old_name, $new_name)
+  public static function rename($old_name, $new_name)
   {
     if (file_exists(__DIR__ . "/database/$new_name.json")) {
       echo "The name of the $new_name table already exists.";
@@ -285,7 +317,7 @@ class Dcobwebs
     }
   }
   
-  public static function count_table(){
+  public static function calculate(){
     $folder = __DIR__ . '/database/';
     $pattern = $folder . '*.json';
     $files = glob($pattern);
@@ -293,8 +325,9 @@ class Dcobwebs
     return $count;
   }
 
-  public static function create_field_table($array, $table)
+  public static function create_field($array)
   {
+    $table = self::$table;
     if (file_exists(__DIR__ . "/database/field/$table.json")) {
       $data = file_get_contents(__DIR__ . "/database/field/$table.json");
       $data_array = json_decode($data, true);
@@ -318,8 +351,9 @@ class Dcobwebs
     }
   }
 
-  public static function delete_field_table($field, $table)
+  public static function delete_field($field)
   {
+    $table = self::$table;
     if (file_exists(__DIR__ . "/database/$table.json")) {
       $data = file_get_contents(__DIR__ . "/database/field/$table.json");
       $data_array = json_decode($data, true);
@@ -344,8 +378,9 @@ class Dcobwebs
     }
   }
 
-  public static function list_field_table($table)
+  public static function list_field($table)
   {
+    $table = self::$table;
     if (file_exists(__DIR__ . "/database/$table.json")) {
       $data = file_get_contents(__DIR__ . "/database/field/$table.json");
       $data_array = json_decode($data, true);
