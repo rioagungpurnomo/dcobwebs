@@ -48,7 +48,7 @@ Dcobwebs::delete_data(id, array, table);
 ### Count Data
 Counts how much data is in a table.
 ```php
-Dcobwebs::table_data(table);
+Dcobwebs::count_data(table);
 ```
 
 ### Single Data
