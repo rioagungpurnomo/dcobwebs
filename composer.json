@@ -1,6 +1,6 @@
 {
     "name": "rioagungpurnomo/dcobwebs",
-    "description": "DCobwebs (Database Cobwebs) PHP framework to make it easier to process data and very simple noSQL.",
+    "description": "DCobwebs (Database Cobwebs) PHP framework to make it easier to process data and very simple NoSQL.",
     "type": "library",
     "license": "MIT",
     "autoload": {

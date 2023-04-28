@@ -7,7 +7,7 @@
 </p>
 
 # DCobwebs
-DCobwebs (Database Cobwebs) PHP framework to make it easier to process data and very simple noSQL.
+DCobwebs (Database Cobwebs) PHP framework to make it easier to process data and very simple NoSQL.
 
 Demo : **[View](http://dcobwebs.epizy.com)**
 
