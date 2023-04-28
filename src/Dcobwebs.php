@@ -230,7 +230,7 @@ $results = array_filter($data_array, function($item) use ($value) {
   }
 
 
-  public static function desc($fiel)
+  public static function desc($field)
   {
     $table = self::$table;
     if (file_exists(__DIR__ . "/database/$table.json")) {
