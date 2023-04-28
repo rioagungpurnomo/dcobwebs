@@ -20,7 +20,7 @@ composer require rioagungpurnomo/dcobwebs
 ### Example
 A simple example of using DCobwebs and creating a **users** table containing **name** and **bio** fields.
 ```php
-require 'vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
 
 use Rioagungpurnomo\Dcobwebs\Dcobwebs;
 
