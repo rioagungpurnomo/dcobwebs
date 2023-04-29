@@ -143,9 +143,9 @@ Dcobwebs::decrypt(ciphertext, key, iv);
 ```
 
 ## Donate
-Help me to buy a laptop because my laptop is broken and I don't have a laptop, I only use an Android phone to make works like this even though it's difficult, your help and donations are a great encouragement for me to continue working.
+<a href="https://trakteer.id/rioagungpurnomo" target="_blank"><img id="wse-buttons-preview" src="https://cdn.trakteer.id/images/embed/trbtn-red-6.png" height="40" style="border:0px;height:40px;" alt="Trakteer Saya"></a>
 
-Link : **[Donate](https://trakteer.id/rioagungpurnomo)**
+Paypal : **[Support me](https://www.paypal.me/RioDev)**
 
 ## Contact me
 Contact me via email: **rioagungpurnomo.ak@gmail.com**, give me input or suggestions or request additional features for DCobwebs to become the number 1 tool for your help.
