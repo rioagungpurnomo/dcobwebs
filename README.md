@@ -70,13 +70,13 @@ Dcobwebs::table(table)->all();
 ```
 
 ### ASC Data
-Displays all data in a table by ASC (ASC).
+Displays all data in a table by ASC (Ascending).
 ```php
 Dcobwebs::table(table)->asc(field);
 ```
 
 ### DESC Data
-Displays all data in a table by DESC (DESC).
+Displays all data in a table by DESC (Descending).
 ```php
 Dcobwebs::table(table)->desc(field);
 ```
