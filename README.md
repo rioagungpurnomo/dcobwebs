@@ -147,7 +147,7 @@ Saweria : **[Support me](https://saweria.co/rioagungpurnomo)**
 
 Trakteer : **[Support me](https://trakteer.id/rioagungpurnomo)**
 
-Paypal : **[Support me](https://www.paypal.me/RioDev)**
+Paypal : **[Support me](https://www.paypal.me/rioagungpurnomoo)**
 
 ## Contact me
-Contact me via email: **rioagungpurnomo.ak@gmail.com**, give me input or suggestions or request additional features for DCobwebs to become the number 1 tool for your help.
+Contact me via email: **rioagungpurnomo@programmer.net**, give me input or suggestions or request additional features for DCobwebs to become the number 1 tool for your help.
